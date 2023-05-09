@@ -1,19 +1,19 @@
 /* The myReverse() method reverses an array in place and returns the reference
    to the same array */
-let myReverse = (array) => {
+Array.prototype.myReverse = function() {
     let i = 0;
-    let j = array.length - 1;
+    let j = this.length - 1;
     while (i < j) {
-        let tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
+        let tmp = this[i];
+        this[i] = this[j];
+        this[j] = tmp;
         i += 1;
         j -= 1;
     }
 }
 // let arr = [1,2,3];
-// myReverse(arr);
-// console.log(arr);
+// arr.myReverse();
+// console.log(arr); -> [3,2,1]
 
 /* The myPop() method removes the last element from an array and returns that element. 
    This method changes the length of the array. */
